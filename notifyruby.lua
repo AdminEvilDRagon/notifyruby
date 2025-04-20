@@ -40,7 +40,7 @@ function NotifyLib:Notify(message, duration)
 	Title.Text = "Ruby Hub Notify"
 	Title.Font = Enum.Font.GothamBold
 	Title.TextSize = 16
-	Title.TextColor3 = Color3.fromRGB(255, 255, 255)  -- Weißer Text
+	Title.TextColor3 = Color3.fromRGB(255, 0, 143)  -- Weißer Text
 	Title.BackgroundTransparency = 1
 	Title.Position = UDim2.new(0.5, 0, 0, 5)  -- Titel oben mittig
 	Title.AnchorPoint = Vector2.new(0.5, 0)
