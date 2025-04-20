@@ -17,7 +17,7 @@ Holder.Parent = ScreenGui
 
 local notifySound = Instance.new("Sound")
 notifySound.SoundId = "rbxassetid://639589431" -- Ersetze durch deine gewünschte Sound-ID
-notifySound.Volume = 10
+notifySound.Volume = 7
 notifySound.Parent = SoundService
 
 function NotifyLib:Notify(message, duration)
