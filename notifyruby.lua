@@ -1,6 +1,7 @@
 local NotifyLib = {}
 
 local TweenService = game:GetService("TweenService")
+local SoundService = game:GetService("SoundService")
 
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "RubyHubNotifyUI"
@@ -14,6 +15,11 @@ Holder.BackgroundTransparency = 1
 Holder.Name = "NotifyHolder"
 Holder.Parent = ScreenGui
 
+local notifySound = Instance.new("Sound")
+notifySound.SoundId = "rbxassetid://8503531171" -- Ersetze durch deine gewünschte Sound-ID
+notifySound.Volume = 0.5
+notifySound.Parent = SoundService
+
 function NotifyLib:Notify(message, duration)
 	duration = duration or 3
 
@@ -21,8 +27,8 @@ function NotifyLib:Notify(message, duration)
 	NotifyFrame.Size = UDim2.new(0, 0, 0, 60)
 	NotifyFrame.Position = UDim2.new(0.5, 0, 0, 0)
 	NotifyFrame.AnchorPoint = Vector2.new(0.5, 0)
-	NotifyFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	NotifyFrame.BackgroundTransparency = 1
+	NotifyFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)  -- Weniger transparent, etwas dunkler
+	NotifyFrame.BackgroundTransparency = 0.15  -- Leicht durchscheinend
 	NotifyFrame.BorderSizePixel = 0
 	NotifyFrame.Parent = Holder
 
@@ -32,26 +38,30 @@ function NotifyLib:Notify(message, duration)
 
 	local Title = Instance.new("TextLabel")
 	Title.Text = "Ruby Hub Notify"
-	Title.Font = Enum.Font.Gotham
-	Title.TextSize = 14
-	Title.TextColor3 = Color3.fromRGB(255, 100, 100)
+	Title.Font = Enum.Font.GothamBold
+	Title.TextSize = 16
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)  -- Weißer Text
 	Title.BackgroundTransparency = 1
-	Title.Position = UDim2.new(0, 10, 0, 5)
+	Title.Position = UDim2.new(0.5, 0, 0, 5)  -- Titel oben mittig
+	Title.AnchorPoint = Vector2.new(0.5, 0)
 	Title.Size = UDim2.new(1, -20, 0, 18)
-	Title.TextXAlignment = Enum.TextXAlignment.Left
+	Title.TextXAlignment = Enum.TextXAlignment.Center
 	Title.Parent = NotifyFrame
 
 	local Msg = Instance.new("TextLabel")
 	Msg.Text = message
 	Msg.Font = Enum.Font.GothamSemibold
-	Msg.TextSize = 16
-	Msg.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Msg.TextSize = 18
+	Msg.TextColor3 = Color3.fromRGB(255, 255, 255)  -- Weißer Text
 	Msg.BackgroundTransparency = 1
 	Msg.Position = UDim2.new(0, 10, 0, 25)
 	Msg.Size = UDim2.new(1, -20, 1, -30)
 	Msg.TextXAlignment = Enum.TextXAlignment.Left
 	Msg.TextWrapped = true
 	Msg.Parent = NotifyFrame
+
+	-- Sound abspielen
+	notifySound:Play()
 
 	local tweenIn = TweenService:Create(NotifyFrame, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 		Size = UDim2.new(0, 320, 0, 60),
