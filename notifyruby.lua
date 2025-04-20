@@ -37,7 +37,7 @@ function NotifyLib:Notify(message, duration)
 	UICorner.Parent = NotifyFrame
 
 	local Title = Instance.new("TextLabel")
-	Title.Text = "-- Ruby Hub --"
+	Title.Text = "-- Ruby Hub V2 --"
 	Title.Font = Enum.Font.GothamBold
 	Title.TextSize = 16
 	Title.TextColor3 = Color3.fromRGB(255, 0, 143)  -- purpel text
