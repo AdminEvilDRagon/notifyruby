@@ -16,8 +16,8 @@ Holder.Name = "NotifyHolder"
 Holder.Parent = ScreenGui
 
 local notifySound = Instance.new("Sound")
-notifySound.SoundId = "rbxassetid://8503531171" -- Ersetze durch deine gewünschte Sound-ID
-notifySound.Volume = 0.5
+notifySound.SoundId = "rbxassetid://639589431" -- Ersetze durch deine gewünschte Sound-ID
+notifySound.Volume = 10
 notifySound.Parent = SoundService
 
 function NotifyLib:Notify(message, duration)
@@ -40,7 +40,7 @@ function NotifyLib:Notify(message, duration)
 	Title.Text = "Ruby Hub Notify"
 	Title.Font = Enum.Font.GothamBold
 	Title.TextSize = 16
-	Title.TextColor3 = Color3.fromRGB(255, 0, 143)  -- Weißer Text
+	Title.TextColor3 = Color3.fromRGB(255, 0, 143)  -- purpel text
 	Title.BackgroundTransparency = 1
 	Title.Position = UDim2.new(0.5, 0, 0, 5)  -- Titel oben mittig
 	Title.AnchorPoint = Vector2.new(0.5, 0)
