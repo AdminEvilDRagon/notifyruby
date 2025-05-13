@@ -28,7 +28,7 @@ function NotifyLib:Notify(message, duration)
 	NotifyFrame.Position = UDim2.new(0.5, 0, 0, 0)
 	NotifyFrame.AnchorPoint = Vector2.new(0.5, 0)
 	NotifyFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)  
-	NotifyFrame.BackgroundTransparency = 0.15  
+	NotifyFrame.BackgroundTransparency = 0.75 
 	NotifyFrame.BorderSizePixel = 0
 	NotifyFrame.Parent = Holder
 
